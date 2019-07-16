@@ -38,7 +38,7 @@
 #define RT_USING_CONSOLE
 #define RT_CONSOLEBUF_SIZE 128
 #define RT_CONSOLE_DEVICE_NAME "uart1"
-#define RT_VER_NUM 0x40000
+#define RT_VER_NUM 0x30102
 #define ARCH_ARM
 #define ARCH_ARM_CORTEX_M
 #define ARCH_ARM_CORTEX_M4
@@ -88,11 +88,19 @@
 
 /* POSIX layer and C standard library */
 
+#define RT_USING_LIBC
 
 /* Network */
 
 /* Socket abstraction layer */
 
+#define RT_USING_SAL
+
+/* protocol stack implement */
+
+#define SAL_USING_AT
+#define SAL_SOCKETS_NUM 16
+#define SAL_PROTO_FAMILIES_NUM 4
 
 /* light weight TCP/IP stack */
 
@@ -102,6 +110,13 @@
 
 /* AT commands */
 
+#define RT_USING_AT
+#define AT_DEBUG
+#define AT_USING_CLIENT
+#define AT_CLIENT_NUM_MAX 1
+#define AT_USING_SOCKET
+#define AT_USING_CLI
+#define AT_SW_VERSION_NUM 0x10200
 
 /* VBUS(Virtual Software BUS) */
 
@@ -124,6 +139,16 @@
 
 /* Wiced WiFi */
 
+#define PKG_USING_AT_DEVICE
+#define PKG_AT_INIT_BY_THREAD
+#define AT_DEVICE_ESP8266
+#define AT_DEVICE_SOCKETS_NUM 5
+#define AT_DEVICE_NAME "uart3"
+#define AT_DEVICE_RECV_BUFF_LEN 512
+#define AT_DEVICE_WIFI_SSID "MERCURY_0FA0"
+#define AT_DEVICE_WIFI_PASSWORD "1234567890"
+#define PKG_USING_AT_DEVICE_V150
+#define PKG_AT_DEVICE_VER_NUM 0x10500
 
 /* IoT Cloud */
 
@@ -167,6 +192,7 @@
 #define BSP_USING_GPIO
 #define BSP_USING_UART
 #define BSP_USING_UART1
+#define BSP_USING_UART3
 
 /* Board extended module Drivers */
 
