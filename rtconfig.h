@@ -176,6 +176,10 @@
 
 /* samples: kernel and components samples */
 
+#define PKG_USING_NETWORK_SAMPLES
+#define PKG_USING_NETWORK_SAMPLES_V030
+#define NETWORK_SAMPLES_USING_TCP_CLIENT
+#define NETWORK_SAMPLES_USING_UDP_CLIENT
 #define SOC_FAMILY_STM32
 #define SOC_SERIES_STM32F4
 
